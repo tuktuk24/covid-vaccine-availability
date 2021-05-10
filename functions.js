@@ -40,6 +40,7 @@ const callApi = async (pincode, date) => {
                 }
             }
         )
+        console.log("STATUS CODE: ", response.status)
         data = await response.json()
     } catch (error) {
         data = error
