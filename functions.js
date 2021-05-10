@@ -30,14 +30,14 @@ const getStateData = async () => {
 const callApi = async (pincode, date) => {
     let data = undefined
     try {
-        const response = await fetch(`${BASE_URL}${SEARCH_BY_PINCODE}?Accept-Language=en_US&pincode=${pincode}&date=${date}`,
+        const response = await fetch(`${BASE_URL}${SEARCH_BY_PINCODE}?pincode=${pincode}&date=${date}`,
             {
-                method: 'GET',
+                method: "GET",
                 headers: {
                     "Accept-Language": "hi_IN",
                     "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36",
-                    'Accept': '*/*',
-                    'Content-Type': 'application/json'
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
                 }
             }
         )
