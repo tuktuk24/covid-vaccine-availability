@@ -1,17 +1,15 @@
 const express = require("express")
 require('dotenv').config()
-const { callApi } = require('./functions')
-
-
+const { fetchAgain } = require('./functions')
 
 const app = express()
 const port = process.env.PORT || 5002
+
 app.get('/', async (req, res) => {
-    const data = await callApi('791111', '10-05-2021')
-    // console.log(await data.json())
-    res.send(data)
+    res.send('Welcome Guest')
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
     console.log("App running successfully")
+    const interval = setInterval(() => fetchAgain(), 2 * 60 * 1000)
 })
